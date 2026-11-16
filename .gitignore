@@ -1,1 +1,6 @@
-
+# --- OTTO : données et secrets ---
+data/
+*.zip
+*.jsonl
+*.parquet
+kaggle.json
