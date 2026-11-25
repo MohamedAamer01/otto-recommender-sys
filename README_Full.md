@@ -1,4 +1,4 @@
-# OTTO – Multi-Objective Recommender System
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/978f369f-63ab-4561-99c2-1f36fb69ceb1" /># OTTO – Multi-Objective Recommender System
 
 A session-based recommender for the Kaggle competition **OTTO – Multi-Objective Recommender System**, built step by step on Google Colab: data understanding, EDA, a leakage-free temporal validation, baselines, co-visitation at scale, and a learned reranker.
 
@@ -193,7 +193,9 @@ Because Recall@20 compares *sets*, the order of the 20 items does not matter. Wi
 │   ├── 03_recsys_theory.ipynb          popularity, CF, matrix factorisation, co-visitation
 │   ├── 04_validation.ipynb             temporal split, labels, metric and its tests
 │   ├── 05_baselines.ipynb              B0 to B3, bootstrap, first Kaggle submission
+|   ├── 05b_submission_b3.ipynb
 │   ├── 06_covisitation.ipynb           diagnostics, co-visitation, experiments 6.1 to 6.2c
+|   ├── 06_phase6_diagnostic.ipynb
 │   └── 07_reranker_and_submission.ipynb  reranker pilot, final submissions
 ├── src/
 │   ├── otto_core.py   otto_rank.py   otto_infer.py
