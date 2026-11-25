@@ -1,0 +1,25 @@
+model,split,clicks,carts,orders,score,notes
+B0 top-20 global,dev300k,0.0082,0.0062,0.0047,0.0055,popularité avant T
+B1 top-20 par type,dev300k,0.0082,0.0078,0.006,0.0067,popularité par type
+B2 dernière semaine,dev300k,0.0075,0.0068,0.0069,0.007,pas significatif vs B1
+Plafond session seulement,dev300k,0.3239,0.3139,0.5959,0.4841,"classement parfait, sans complément"
+B3 session + popularité,dev300k,0.3275,0.3121,0.5738,0.4706,"articles du préfixe, récents d'abord"
+B4 co-visitation K=10 top-50,dev300k,0.5028,0.3947,0.6235,0.5428,"fenêtre 24 h, 10 graines"
+B4 γ=0.5,dev300k,0.5091,0.401,0.627,0.5474,décroissance de récence
+B4* γ=0.5 + normalisation,dev300k,0.5134,0.4042,0.6285,0.5497,modèle figé après 6.2a
+B3 session + popularité,kaggle_public,,,,0.4791,soumission Kaggle (tardive)
+B3 session + popularité,kaggle_private,,,,0.4803,soumission Kaggle (tardive)
+6.2b alpha=0.25 (négatif),dev300k,0.5086,0.4042,0.6284,0.5491,normalisation par pop(j)^alpha avant top-N : pas mieux que alpha=0
+6.2b alpha=0.5 (négatif),dev300k,0.4816,0.3914,0.6204,0.5378,normalisation par pop(j)^alpha avant top-N : pas mieux que alpha=0
+6.2b alpha=1.0 (négatif),dev300k,0.3694,0.3327,0.5858,0.4882,normalisation par pop(j)^alpha avant top-N : pas mieux que alpha=0
+6.2c tables typées (négatif),dev300k,0.5142,0.4053,0.6285,0.5501,"λ par type = {'clicks': 0.6, 'carts': 0.3, 'orders': 0.0} : gain < 0.001"
+B4* γ=0.5 + normalisation,kaggle_public,,,,0.56353,"soumission Kaggle (tardive), table sur tout le train"
+B4* γ=0.5 + normalisation,kaggle_private,,,,0.56271,"soumission Kaggle (tardive), table sur tout le train"
+7 pilote classeur (orders seulement),dev300k,0.5134,0.4042,0.6535,0.56471,"HistGradientBoosting, 18 variables, 30k sessions"
+7 classeur 3 types (18 variables),dev300k,0.5094,0.3954,0.6535,0.56167,NÉGATIF pour carts (-0.0088) et clicks (-0.0040) : classeur retenu pour orders seulement
+7b classeur orders sans variables d'échelle,dev300k,0.5134,0.4042,0.6477,0.5612,"15 variables (sans raw_sum, logpop, logpop_t) : perte 0.0058 sur orders vs 18 variables"
+B5 B4* + classeur orders,dev300k,0.5134,0.4042,0.6535,0.56471,"classeur HistGradientBoosting (18 variables) pour orders, B4* pour clicks et carts"
+B5 B4* + classeur orders,kaggle_public,,,,0.57597,"soumission A (18 variables), table sur tout le train"
+B5 B4* + classeur orders,kaggle_private,,,,0.57566,"soumission A (18 variables), table sur tout le train"
+7b classeur orders sans variables d'échelle,kaggle_public,,,,0.57207,"soumission B (15 variables) : -0.0039 vs A sur Kaggle, conforme au dev"
+7b classeur orders sans variables d'échelle,kaggle_private,,,,0.57203,"soumission B (15 variables) : -0.0039 vs A sur Kaggle, conforme au dev"
