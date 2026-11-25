@@ -1,5 +1,3 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/978f369f-63ab-4561-99c2-1f36fb69ceb1" /># OTTO – Multi-Objective Recommender System
-
 A session-based recommender for the Kaggle competition **OTTO – Multi-Objective Recommender System**, built step by step on Google Colab: data understanding, EDA, a leakage-free temporal validation, baselines, co-visitation at scale, and a learned reranker.
 
 **Result:** Weighted Recall@20 of **0.5760 (public) / 0.5757 (private)** on Kaggle, from 0.0067 for a popularity baseline. The competition is over, so this is a late submission and does not count for the ranking. Top public solutions reportedly reached about 0.60 (check the competition leaderboard).
