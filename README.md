@@ -1,8 +1,8 @@
 # OTTO Recommender System: Kaggle Project
 
-**Author:** [Aamer Mohamed ] **Supervisor:** [Professor ELhabib Nfaoui] **Repository:** https://github.com/MohamedAamer01/otto-recommender-sys
+**Author:** Aamer Mohamed **Supervisor:** Professor ELhabib Nfaoui **Repository:** https://github.com/MohamedAamer01/otto-recommender-sys
 
-> This document summarises the project in a few minutes of reading. The full technical detail is in `README.md` and in the notebooks.
+> This document summarises the project in a few minutes of reading. The full technical detail is in `README_Full.md` and in the notebooks.
 
 ---
 
